@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name>music-analysis</display-name>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+   
+    <servlet>
+    	<servlet-name>JDBCExample</servlet-name>
+    	<servlet-class>org.music.analysis.controller.JDBCExample</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>db_test</servlet-name>
+        <servlet-class>org.music.analysis.controller.db_test</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+         <servlet-name>db_test</servlet-name>
+         <url-pattern>/db_test</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+         <servlet-name>JDBCExample</servlet-name>
+         <url-pattern>/JDBCExample</url-pattern>
+    </servlet-mapping>
+
+    </web-app>
