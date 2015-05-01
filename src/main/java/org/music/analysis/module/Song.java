@@ -1,4 +1,4 @@
-package org.music.analysis;
+package org.music.analysis.module;
 
 public class Song {
 	private String songName;
