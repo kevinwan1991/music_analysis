@@ -1,4 +1,4 @@
-package org.music.analysis;
+package org.music.analysis.module;
 
 import java.util.ArrayList;
 

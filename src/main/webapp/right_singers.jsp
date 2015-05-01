@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@ page import="org.music.analysis.*"%>
+<%@ page import="org.music.analysis.module.*"%>
 <%
 	Singers singers = new Singers();
 	singers = (Singers) request.getAttribute("singers");

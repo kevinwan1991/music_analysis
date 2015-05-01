@@ -1,4 +1,4 @@
-package org.music.analysis;
+package org.music.analysis.module;
 // Import required java libraries
 import java.io.*;
 import javax.servlet.*;
