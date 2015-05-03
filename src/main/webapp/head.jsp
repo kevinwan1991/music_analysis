@@ -9,7 +9,7 @@
 <body>
 <table border="0" width="100%" align="center">
     <tr>
-        <td align="center"><a href="index.jsp"><img src="images/logo_analysis.png"/></a></td>
+        <td align="center"><a href="/musicA/"><img src="images/logo_analysis.png"/></a></td>
     </tr>
 </table>
 </body>

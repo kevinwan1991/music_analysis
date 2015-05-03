@@ -1,17 +1,17 @@
 package org.music.analysis.module;
 
 public class Singer {
-	private String sName;
-	private String[] albums;
-	private int popularity;
-	private String country;
+	private String sName = "";
+	private String[] albums = null;
+	private int popularity = 0;
+	private String country = "";
 	
-	Singer(){
-		this.sName = "";
-		this.albums = null;
-		this.popularity = 0;
-		this.country = "";
-	}
+//	Singer(){
+//		this.sName = "";
+//		this.albums = null;
+//		this.popularity = 0;
+//		this.country = "";
+//	}
 	
 	public void setName(String sName){
 		this.sName = sName;
