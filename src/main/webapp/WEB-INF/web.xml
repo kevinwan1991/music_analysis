@@ -37,6 +37,20 @@
     	<servlet-name>info_songs</servlet-name>
     	<servlet-class>org.music.analysis.module.info_songs</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>info_singer</display-name>
+    	<servlet-name>info_singer</servlet-name>
+    	<servlet-class>org.music.analysis.module.info_singer</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>info_song</display-name>
+    	<servlet-name>info_song</servlet-name>
+    	<servlet-class>org.music.analysis.module.info_song</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>central</servlet-name>
@@ -60,6 +74,14 @@
     <servlet-mapping>
     	<servlet-name>info_songs</servlet-name>
     	<url-pattern>/info_songs</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>info_singer</servlet-name>
+    	<url-pattern>/info_singer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>info_song</servlet-name>
+    	<url-pattern>/info_song</url-pattern>
     </servlet-mapping>
 
     </web-app>

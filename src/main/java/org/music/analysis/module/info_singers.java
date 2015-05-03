@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Servlet implementation class info_singers
  */
@@ -49,10 +52,23 @@ public class info_singers extends HttpServlet {
 			songs.getSongList().get(i).setAlbumBelong(albumName[i]);
 			songs.getSongList().get(i).setViews(i*10);
 		}
+		
+//		JSONObject json_obj = new JSONObject();
+//		try {
+//			for(int i=0; i<15; i++){
+//				json_obj.put("word", "XU Wei");
+//				json_obj.put("weight",70);
+//			}
+//		} catch (JSONException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
 //		singers.setSingerList(tmp_singer);
 //		String str = "hello";
 		request.setAttribute("singers", singers);
 		request.setAttribute("songs", songs);
+//		request.setAttribute("json_singers", json_obj);
 		
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
