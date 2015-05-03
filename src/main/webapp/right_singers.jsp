@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*"%> <%-- pageEncoding="ISO-8859-1"%> --%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="org.music.analysis.module.*"%>
 <%
 	Singers singers = new Singers();
@@ -28,13 +29,13 @@
 	<img src="images/hot_singers.png"/>
 	<table id="table_singer" width="200px" border="0">
 		<%
-          for(int i = 0; i < singers.getSingerList().size(); i++){
+          for(int i = 0; i < 10; i++){ //singers.getSingerList().size(); i++){
 				String sName = "";
 				sName = singers.getSingerList().get(i).getName();
           %>
 	          <tr align="center">
 	          	<td width="30px" rowspan="2"><img id="sImg" src="images/nums/<%= i+1%>_mini.png"/></td>
-	          	<td width="40px" rowspan="2"><a href="singer.jsp?singerName=<%= sName %>"><img id="sImg" src="images/singers/<%= sName%>_mini.jpg"/></a></td>
+	          	<td width="40px" rowspan="2"><a href="singer.jsp?singerName=<%= sName %>"><img id="sImg" src="images/singers/<%= sName%>.jpg"/></a></td>
 	            <td width="130px"><%= sName %></td>
 	          </tr>
 	          <tr align="center">

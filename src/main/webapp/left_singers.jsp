@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="org.music.analysis.module.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,7 +9,29 @@
 <script>
   var fill = d3.scale.category20();
   
-  var data = [{word:"XU Wei",weight:90},{word:"ZHENG Jun",weight:70},{word:"ZHANG Liangying",weight:30},{word:"A-Lin",weight:50},
+  var data = new Array();
+  <%
+  Singers singers = new Singers();
+  singers = (Singers) request.getAttribute("singers");
+  
+  //inject singer names to an array
+  for(int i=0; i<singers.getSingerList().size(); i++){
+  %>
+  	
+  	
+  	var key = "<%= singers.getSingerList().get(i).getName() %>";
+  	
+  	var pair = {
+  		word : "<%= singers.getSingerList().get(i).getName() %>",
+  		weight : "<%= singers.getSingerList().get(i).getPopularity()/2000000 %>"
+  	};
+  	
+  	data.push(pair);
+  <%
+  }
+  %>
+  
+  var data1 = [{word:"XU Wei",weight:90},{word:"ZHENG Jun",weight:70},{word:"ZHANG Liangying",weight:30},{word:"A-Lin",weight:50},
               {word:"LI Zhi",weight:30},{word:"ZHAO Lei",weight:60},{word:"HAN Lei",weight:10},{word:"LI Zongwei",weight:60},
               {word:"YU Quan",weight:55},{word:"WAN Xiaoli",weight:40},{word:"SUN Yanzi",weight:60},{word:"CAI Jianya",weight:20},
               {word:"WANG Will",weight:30},{word:"KANG Travis",weight:30},{word:"LI Brisk",weight:20},{word:"LI Siyuan",weight:20},
@@ -26,7 +49,7 @@
       .start();
 
   function draw(words) {
-    d3.select("span").append("svg")
+    d3.select("span1").append("svg")
         .attr("width", 800)
         .attr("height", 500)
       .append("g")
@@ -44,6 +67,7 @@
         .text(function(d) { return d.text; });
   }
 </script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style type="text/css">
 	.word_cloud{

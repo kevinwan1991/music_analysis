@@ -6,27 +6,66 @@
             30
         </session-timeout>
     </session-config>
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
-   
+    
+    <jsp-config>
+    	<jsp-property-group>
+        	<url-pattern>*.jsp</url-pattern>
+        	<page-encoding>UTF-8</page-encoding>
+    	</jsp-property-group>
+	</jsp-config>
+
     <servlet>
-    	<servlet-name>JDBCExample</servlet-name>
-    	<servlet-class>org.music.analysis.controller.JDBCExample</servlet-class>
+        <servlet-name>central</servlet-name>
+        <servlet-class>org.music.analysis.central</servlet-class>
     </servlet>
+
     <servlet>
         <servlet-name>db_test</servlet-name>
         <servlet-class>org.music.analysis.controller.db_test</servlet-class>
     </servlet>
 
+    <servlet>
+    	<servlet-name>sql</servlet-name>
+    	<servlet-class>JDBCExample</servlet-class>
+    </servlet>
+
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>info_singers</display-name>
+    	<servlet-name>info_singers</servlet-name>
+    	<servlet-class>org.music.analysis.module.info_singers</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>info_songs</display-name>
+    	<servlet-name>info_songs</servlet-name>
+    	<servlet-class>org.music.analysis.module.info_songs</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>central</servlet-name>
+        <url-pattern>/central</url-pattern>
+    </servlet-mapping>
+      
     <servlet-mapping>
          <servlet-name>db_test</servlet-name>
          <url-pattern>/db_test</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
-         <servlet-name>JDBCExample</servlet-name>
-         <url-pattern>/JDBCExample</url-pattern>
+         <servlet-name>sql</servlet-name>
+         <url-pattern>/sql</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+    	<servlet-name>info_singers</servlet-name>
+    	<url-pattern></url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>info_songs</servlet-name>
+    	<url-pattern>/info_songs</url-pattern>
     </servlet-mapping>
 
     </web-app>

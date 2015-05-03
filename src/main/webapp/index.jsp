@@ -65,7 +65,7 @@
 			  <div id="tabs-1">
 				  <table>
 					<tr>
-						<td width="80%" height="500" valign="top"><span><jsp:include flush="true" page="left_singers.jsp"></jsp:include></span></td>
+						<td width="80%" height="500" valign="top"><span1><jsp:include flush="true" page="left_singers.jsp"></jsp:include></span1></td>
 						<td width="20%" height="500" valign="top"><jsp:include flush="true" page="right_singers.jsp"></jsp:include></td>
 					</tr>
 				  </table>
@@ -73,7 +73,7 @@
 			  <div id="tabs-2">
 			  	<table>
 					<tr>
-						<td width="80%" height="500" valign="top"><jsp:include flush="true" page="left_songs.jsp"></jsp:include></td>
+						<td width="80%" height="500" valign="top"><span2><jsp:include flush="true" page="left_songs.jsp"></jsp:include></span2></td>
 						<td width="20%" height="500" valign="top"><jsp:include flush="true" page="right_songs.jsp"></jsp:include></td>
 					</tr>
 				  </table>

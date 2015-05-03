@@ -6,7 +6,7 @@ public class ConnDB {
 	public Connection ct = null;
 	
 	public Connection getConnection(){
-		String url="jdbc:mysql://musicanalysisdata.cuxecej3mq5k.us-west-2.rds.amazonaws.com/Database_Project_DB";
+		String url="jdbc:mysql://musicanalysisdata.cuxecej3mq5k.us-west-2.rds.amazonaws.com/Database_Project_DB2";
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			ct = DriverManager.getConnection(url,"KevinWill","password");	

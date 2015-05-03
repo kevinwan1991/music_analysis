@@ -6,7 +6,7 @@ public class Singer {
 	private int popularity;
 	private String country;
 	
-	Singer(){
+	public Singer(){
 		this.sName = "";
 		this.albums = null;
 		this.popularity = 0;

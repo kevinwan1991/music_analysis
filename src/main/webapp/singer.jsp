@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*"%> <!-- pageEncoding="ISO-8859-1"%> -->
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="org.music.analysis.module.*"%>
 <%
 	String singerName = "";

@@ -1,16 +1,44 @@
 package org.music.analysis.module;
 
 public class Song {
+	private String id;
+	private String genres;
 	private String songName;
 	private String albumBelong;
 	private int views;
 	private String language;
 	
-	Song(){
+	public Song(){
+		this.id = null;
+		this.genres = null;
 		this.songName = "";
 		this.albumBelong = null;
 		this.views = 0;
 		this.language = "";
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getGenres() {
+		return genres;
+	}
+
+	public void setGenres(String genres) {
+		this.genres = genres;
+	}
+
+	public String getSongName() {
+		return songName;
+	}
+
+	public void setSongName(String songName) {
+		this.songName = songName;
 	}
 	
 	public void setName(String sName){

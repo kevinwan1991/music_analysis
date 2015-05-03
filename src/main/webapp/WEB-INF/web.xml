@@ -7,7 +7,8 @@
         </session-timeout>
     </session-config>
     
-   
+    
+
     <servlet>
         <servlet-name>central</servlet-name>
         <servlet-class>org.music.analysis.central</servlet-class>
@@ -15,7 +16,7 @@
 
     <servlet>
         <servlet-name>db_test</servlet-name>
-        <servlet-class>org.music.analysis.db_test</servlet-class>
+        <servlet-class>org.music.analysis.controller.db_test</servlet-class>
     </servlet>
 
     <servlet>
@@ -28,14 +29,14 @@
     	</description>
     	<display-name>info_singers</display-name>
     	<servlet-name>info_singers</servlet-name>
-    	<servlet-class>org.music.analysis.module.info_singers</servlet-class>
+    	<servlet-class>org.music.analysis.controller.info_singers</servlet-class>
     </servlet>
     <servlet>
     	<description>
     	</description>
     	<display-name>info_songs</display-name>
     	<servlet-name>info_songs</servlet-name>
-    	<servlet-class>org.music.analysis.module.info_songs</servlet-class>
+    	<servlet-class>org.music.analysis.controller.info_songs</servlet-class>
     </servlet>
 
     <servlet-mapping>

@@ -28,7 +28,7 @@
 	<img src="images/hot_songs.png"/>
 	<table id="table_singer" width="200px" border="0">
 		<%
-          for(int i = 0; i < songs.getSongList().size(); i++){
+          for(int i = 0; i < 10; i++){ //songs.getSongList().size(); i++){
 				String songName = "";
 				String albumName = "";
 				songName = songs.getSongList().get(i).getName();
@@ -36,7 +36,7 @@
           %>
 	          <tr align="center">
 	          	<td width="30px" rowspan="2"><img id="sImg" src="images/nums/<%= i+1%>_mini.png"/></td>
-	          	<td width="40px" rowspan="2"><a href="song.jsp?songName=<%= songName %>"><img id="sImg" src="images/albums/<%= albumName%>_mini.jpg"/></a></td>
+	          	<td width="40px" rowspan="2"><a href="song.jsp?songName=<%= songName %>"><img id="sImg" src="images/albums/<%= songName%>.jpg"/></a></td>
 	            <td width="130px"><%= songName %></td>
 	          </tr>
 	          <tr align="center">
