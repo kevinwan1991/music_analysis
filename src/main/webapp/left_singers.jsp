@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="org.music.analysis.module.*"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,7 +8,6 @@
 <script src="./framework/d3.layout.cloud.js"></script>
 <script>
   var fill = d3.scale.category20();
-  
   var data = new Array();
   <%
   Singers singers = new Singers();
@@ -35,7 +34,9 @@
               {word:"LI Zhi",weight:30},{word:"ZHAO Lei",weight:60},{word:"HAN Lei",weight:10},{word:"LI Zongwei",weight:60},
               {word:"YU Quan",weight:55},{word:"WAN Xiaoli",weight:40},{word:"SUN Yanzi",weight:60},{word:"CAI Jianya",weight:20},
               {word:"WANG Will",weight:30},{word:"KANG Travis",weight:30},{word:"LI Brisk",weight:20},{word:"LI Siyuan",weight:20},
-              {word:"WAN Kevin",weight:40}];
+              {word:"WAN Kevin",weight:40}]; 
+     
+     
 
   d3.layout.cloud().size([800, 500])
       .words(data.map(function(d) {
@@ -47,6 +48,25 @@
       .fontSize(function(d) { return d.size; })
       .on("end", draw)
       .start();
+  
+/*   d3.csv("top_singers.csv", function(data) {
+	    // build the list of city names
+	    data.forEach( function (d) {
+	        singerData.push(d.word);
+	    });
+
+	    d3.layout.cloud().size([800, 500])
+	        .words(singerData.map(function(d) {
+	            return {text: d, size: 10 + Math.random() * 90};
+	        }))
+	        .rotate(function() { return ~~(Math.random() * 2) * 90; })
+	        .font("Impact")
+	        .fontSize(function(d) { return d.size; })
+	        .on("end", draw)
+	        .start();
+	}); */
+  
+  
 
   function draw(words) {
     d3.select("span1").append("svg")

@@ -1,21 +1,24 @@
 package org.music.analysis.module;
 
 public class Song {
+
 	private String id;
-	private String genres;
+	private String genre;
 	private String songName;
 	private String albumBelong;
 	private int views;
 	private String language;
+	private String url;
 	
 	public Song(){
 		this.id = null;
-		this.genres = null;
+		this.genre = null;
 		this.songName = "";
 		this.albumBelong = null;
 		this.views = 0;
 		this.language = "";
 	}
+
 	
 	public String getId() {
 		return id;
@@ -26,11 +29,11 @@ public class Song {
 	}
 
 	public String getGenres() {
-		return genres;
+		return genre;
 	}
 
-	public void setGenres(String genres) {
-		this.genres = genres;
+	public void setGenres(String genre) {
+		this.genre = genre;
 	}
 
 	public String getSongName() {
@@ -53,6 +56,12 @@ public class Song {
 	public void setViews(int views){
 		this.views = views;
 	}
+	public void setUrl(String url){
+		this.url = url;
+	}
+	public void setGenre(String genre){
+		this.genre = genre;
+	}
 	
 	public String getName(){
 		return this.songName;
@@ -65,5 +74,11 @@ public class Song {
 	}
 	public int getViews(){
 		return this.views;
+	}
+	public String getUrl(){
+		return this.url;
+	}
+	public String getGenre(){
+		return this.genre;
 	}
 }
