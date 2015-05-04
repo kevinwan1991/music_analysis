@@ -36,7 +36,7 @@
           %>
 	          <tr align="center">
 	          	<td width="30px" rowspan="2"><img id="sImg" src="images/nums/<%= i+1%>_mini.png"/></td>
-	          	<td width="40px" rowspan="2"><a href="song.jsp?songName=<%= songName %>"><img id="sImg" src="images/albums/<%= songName%>.jpg"/></a></td>
+	          	<td width="40px" rowspan="2"><a href="info_song?songName=<%= songName %>"><img id="sImg" src="images/albums/<%= songName%>.jpg"/></a></td>
 	            <td width="130px"><%= songName %></td>
 	          </tr>
 	          <tr align="center">

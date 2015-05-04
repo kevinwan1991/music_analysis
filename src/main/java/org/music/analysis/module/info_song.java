@@ -1,6 +1,7 @@
 package org.music.analysis.module;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,15 +28,19 @@ public class info_song extends HttpServlet {
 		// TODO Auto-generated method stub
 		String sName = "";
 		sName = request.getParameter("songName");
-		String url = "";
+		System.out.println(sName);
+		Song song = new SongHandler().fetchSongInfo(sName);
+		
+		/*String url = "";
 		url = "https://youtu.be/aoSF7qQjPpc";
 		Song song = new Song();
 		song.setAlbumBelong("Cishicike");
 		song.setLanguage("Chinese");
 		song.setName(sName);
 		song.setGenre("country");
-		song.setUrl(url);
+		song.setUrl(url);*/
 		
+		System.out.println(song.getUrl());
 		request.setAttribute("obj_song", song);
 		
 		request.getRequestDispatcher("song.jsp").forward(request, response);

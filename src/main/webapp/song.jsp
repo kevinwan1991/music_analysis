@@ -3,8 +3,7 @@
 <%
 	Song song = new Song();
 	song = (Song) request.getAttribute("obj_song");
-	String url = song.getUrl();
-	String urlKey = url.substring(url.length()-11);
+	String urlKey = song.getId();
 	String sName = song.getName();
 	String sGenre = song.getGenre();
 %>
@@ -431,8 +430,7 @@ function processParams() {
     }
 
     var genre = "<%= sGenre%>";
-    if (genre == null) {
-    	alert("random!!");
+    if (genre == "") {
         genre = getRandomFullGenre();
     }
     /* showGenre(genre); */

@@ -2,22 +2,23 @@ package org.music.analysis.module;
 
 public class Song {
 
-	private String id;
-	private String genre;
-	private String songName;
-	private String albumBelong;
-	private int views;
-	private String language;
-	private String url;
-	
-	public Song(){
-		this.id = null;
-		this.genre = null;
-		this.songName = "";
-		this.albumBelong = null;
-		this.views = 0;
-		this.language = "";
-	}
+	private String id = "";
+	private String genre = "";
+	private String songName = "";
+	private String albumBelong = "";
+	private int views = 0;
+	private String language = "";
+	private String url = "";
+//	
+//	public Song(){
+//		this.id = "";
+//		this.genre = "";
+//		this.songName = "";
+//		this.albumBelong = "";
+//		this.views = 0;
+//		this.language = "";
+//		this.url = "";
+//	}
 
 	
 	public String getId() {

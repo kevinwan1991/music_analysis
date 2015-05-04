@@ -65,16 +65,32 @@
 			  <div id="tabs-1">
 				  <table>
 					<tr>
-						<td width="80%" height="500" valign="top"><span1><jsp:include flush="true" page="left_singers.jsp"></jsp:include></span1></td>
-						<td width="20%" height="500" valign="top"><jsp:include flush="true" page="right_singers.jsp"></jsp:include></td>
+						<td rowspan="2" width="80%" height="500" valign="top"><span1><jsp:include flush="true" page="left_singers.jsp"></jsp:include></span1></td>
+						<td width="20%" height="30" valign="top">
+						  	<form action="info_singer">
+						  		<input type = "text" name = "singerName" />
+						  		<input type = "submit" value = "search"/>	
+						  	</form>
+						</td>
+					</tr>
+					<tr>
+						<td width="20%" height="470" valign="bottom"><jsp:include flush="true" page="right_singers.jsp"></jsp:include></td>
 					</tr>
 				  </table>
 			  </div>
 			  <div id="tabs-2">
 			  	<table>
 					<tr>
-						<td width="80%" height="500" valign="top"><span2><jsp:include flush="true" page="left_songs.jsp"></jsp:include></span2></td>
-						<td width="20%" height="500" valign="top"><jsp:include flush="true" page="right_songs.jsp"></jsp:include></td>
+						<td rowspan="2" width="80%" height="500" valign="top"><span2><jsp:include flush="true" page="left_songs.jsp"></jsp:include></span2></td>
+						<td width="20%" height="30" valign="top">
+						  	<form action="info_song">
+						  		<input type = "text" name = "songName" />
+						  		<input type = "submit" value = "search"/>	
+						  	</form>
+						</td>
+					</tr>
+					<tr>
+						<td width="20%" height="470" valign="bottom"><jsp:include flush="true" page="right_songs.jsp"></jsp:include></td>
 					</tr>
 				  </table>
 			  </div>

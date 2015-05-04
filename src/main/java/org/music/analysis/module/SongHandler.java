@@ -40,7 +40,8 @@ public class SongHandler {
 	      		rs = stmt.executeQuery(sql);
 	      		if(rs.next()){
 	      			genres=rs.getString("name");
-	      			song.setGenres(genres);
+	      			System.out.println(genres);
+	      			song.setGenres(GenreProcessor.act(genres));
 	      		}		
 	      	}
 	      	
