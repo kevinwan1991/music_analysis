@@ -26,6 +26,7 @@
   	};
   	
   	data.push(pair);
+  	
   <%
   }
   %>
@@ -37,7 +38,6 @@
               {word:"WAN Kevin",weight:40}]; 
      
      
-
   d3.layout.cloud().size([800, 500])
       .words(data.map(function(d) {
         return {text: d.word, size: d.weight};
