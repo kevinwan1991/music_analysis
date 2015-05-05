@@ -16,9 +16,7 @@
 /*   var singerData = [], 
       width = 800, 
       height = 500; */
-/* var data = JSON.parse(obj);
- var myVar = '<%= request.getAttribute("json_singers") %>'; 
-          alert(myVar); */
+
   
    var data = [{word:"XU Wei",weight:90},{word:"ZHENG Jun",weight:70},{word:"ZHANG Liangying",weight:30},{word:"A-Lin",weight:50},
               {word:"LI Zhi",weight:30},{word:"ZHAO Lei",weight:60},{word:"HAN Lei",weight:10},{word:"LI Zongwei",weight:60},
