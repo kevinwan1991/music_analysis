@@ -12,16 +12,16 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
+    <title>Singer.jsp</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="framework/spotify_en_tools.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <link type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">
-    <link type="text/css" href="css/spotify_common_styles.css" rel="stylesheet" />
-    
+    <link type="text/css" href="css/spotify_common_styles.css" rel="stylesheet" /> 
 </head>
 <body background="images/web_background.jpg" onload="newArtist()">
+	<div id="info"> </div>
 	<table width="80%" border="0" align="center">
 		<tr>
 		    <td height="80" colspan="2">
@@ -31,7 +31,6 @@
 		</tr>
 		<tr>			
 			<td width="30%">
-				
 				<h1 ><%= singer.getName()%></h1>
 				<div id="all_results_simSingers"> </div>
 			</td>
@@ -47,6 +46,7 @@
 		    </td>
 		  </tr>
 	</table>
+	<div id="info"> </div>
 </body>
 
 <script type="text/javascript">
@@ -54,19 +54,24 @@
 jQuery.ajaxSettings.traditional = true; 
 var config = getConfig();
 
+
 function fetchArtistPlaylist(artist,  wandering, variety) {
-    var url = config.echoNestHost + 'api/v4/playlist/static';
+    var url = config.echoNestHost + 'api/v4/playlist/static';  
     $("#all_results_playlist").empty();
     info("Creating the playlist ...");
-    $.getJSON(url, { 'artist': artist, 
+    $.getJSON(url, { 
+    		'artist': artist, 
             'api_key': config.apiKey,
-            'bucket': [ 'id:' + config.spotifySpace, 'tracks'], 'limit' : true,
-            'variety' : 1, 'results': 40, 'type':'artist-radio',  }) 
+            'bucket': [ 'id:' + config.spotifySpace, 'tracks'],
+            'limit' : true,
+            'variety' : 1, 
+            'results': 10, 
+            'type':'artist-radio',  }) 
         .done(function(data) {
             info("");
             if (! ('songs' in data.response)) {
                 info("Can't find that artist");
-            } else {
+            }else {
                 var title = "Artist radio for " + artist;
                 getSpotifyPlayer(data.response.songs, function(player) {
                     console.log('got the player');
@@ -88,11 +93,12 @@ function fetchSimilarArtists(artist, callback) {
             'id' : artist.id,
             'bucket': [ 'id:' + config.spotifySpace], 
             'limit' : true,
+            'results': 5,
           }) 
         .done(function(data) {
             info("");
             if (data.response.status.code == 0 && data.response.artists.length > 0) {
-                callback(data.response.artists);
+                callback(data.response.artists);                       
             } else {
                 info("No similars for " + artist.name);
             }
@@ -102,7 +108,7 @@ function fetchSimilarArtists(artist, callback) {
         }) ;
 }
 
-function fetchSpotifyImagesForArtists(artists, callback) {
+function fetchSpotifyImagesForArtists(artists, callback) {            
     info("Fetching spotify images for artists ...");
     console.log('fetchSpotifyImagesForArtists');
     var fids = [];
@@ -143,29 +149,29 @@ function showSimilars(seed, similars) {
 function getArtistDiv(artist) {
     var image = getBestImage(artist.spotifyArtistInfo.images, 600);
     if (image) {
-        var adiv = $("<div>");
+        var adiv = $("<div style=\"cursor:pointer\">");
         adiv.addClass('artist');
         adiv.append($("<h4>").text(artist.name));
-       /* var img = $("<img height='100' width='100'>");
+        var img = $("<img height='100' width='100'>");
         img.attr('src', image.url);
-        adiv.append(img); */
-        /* img.on('click', function() {
+        adiv.append(img); 
+        img.on('click', function() {
             $("#artist").val(artist.name);
             fetchSimilarArtists(artist, function(similars) {
                 fetchSpotifyImagesForArtists(similars, function(similars) {
                     showArtists(artist, similars);
                 });
             });
-        }); */
-        /* alert(artist.name); */
+        }); 
+        //alert(artist.name); 
         adiv.on('click', function() {
             $("#artist").val(artist.name);
-            /* fetchSimilarArtists(artist, function(similars) {
+            fetchSimilarArtists(artist, function(similars) {
                 fetchSpotifyImagesForArtists(similars, function(similars) {
                     showArtists(artist, similars);
                 });
-            }); */
-            location.href = "info_singer?singerName="+artist.name;
+            });
+        //location.href = "info_singer?singerName="+artist.name;
         });
         return adiv;
     } else {
@@ -189,6 +195,7 @@ function getBestImage(images, minSize) {
     return best;
 }
 
+
 function searchArtist(name, callback) {
     var url = config.echoNestHost + 'api/v4/artist/search';
     $("#all_results_simSingers").empty();
@@ -198,6 +205,7 @@ function searchArtist(name, callback) {
             'name' : name,
             'bucket': [ 'id:' + config.spotifySpace], 
             'limit' : true,
+			            
           }) 
         .done(function(data) {
             info("");
@@ -208,6 +216,7 @@ function searchArtist(name, callback) {
         }) ;
 }
 
+ 
 function newArtist() {
     var artist = "<%= sName%>";
     fetchArtistPlaylist(artist, false, .2);
@@ -221,7 +230,7 @@ function newArtist() {
                     });
                 });
             });
-        } else {
+        }else {
             info("Can't find that artist");
         }
     });
@@ -232,11 +241,11 @@ function info(txt) {
 }
 
 function initUI() {
-    $("#artist").on('keydown', function(evt) {
+    /* $("#artist").on('keydown', function(evt) {
         if (evt.keyCode == 13) {
             newArtist();
         }
-    });
+    }); */
     /* $("#go").on("click", function() {
         newArtist();
     }); */

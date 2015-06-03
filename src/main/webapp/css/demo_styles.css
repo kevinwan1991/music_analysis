@@ -1,0 +1,70 @@
+@CHARSET "ISO-8859-1";
+body {
+    margin:20px;
+    font-family: Verdana, Helvetica, "Lucida Grande", Arial, sans-serif;
+    font-size:12px;
+}
+
+
+h1 {
+    font-size:22px;
+    font-weight:normal;
+}
+
+h2{
+	font-size:18px;
+	display:inline-block;
+}
+
+
+#list{
+	font-size:18px;
+}
+
+#artists {
+    margin-top:10px;
+    margin-left:20px;
+    left:10px;
+    position:absolute;
+    width:600px;
+}
+
+#tracks {
+    margin-left:0px;
+}
+
+#all_results {
+    visible:hidden;
+    float:left;
+}
+
+#results{
+	float:left;
+}
+
+#range {
+    font-size:8px;
+}
+
+.box {
+    border:solid;
+    border-color:#eee;
+    padding:4px;
+    border-radius:5px;
+    margin-right:10px;
+    margin-bottom:40px;
+    white-space: nowrap;
+}
+
+#info {
+    margin:20px;
+    font-size:18px;
+}
+
+.title {
+    color:#003366;
+}
+.artist {
+    color:#006666;
+}
+

@@ -1,0 +1,125 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>MusicA</title>
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<link href="css/default.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="framework/ajax.js"></script>
+		<script>
+			$(function() {
+			  $( "#tabs" ).tabs();
+			});
+		</script>
+		<style type="text/css">
+			#tabs { 
+			    background: transparent; 
+			    border: none; 
+			} 
+			#tabs .ui-widget-header { 
+			    background: transparent; 
+			    border: none; 
+			    border-bottom: 2px solid #303030; 
+			    -moz-border-radius: 0px; 
+			    -webkit-border-radius: 0px; 
+			    border-radius: 0px; 
+			}
+			#tabs .ui-tabs-nav .ui-state-default { 
+			    background: transparent; 
+			    border: none; 
+			} 
+			#tabs .ui-tabs-nav .ui-state-active { 
+			    background: transparent url(images/uiTabsArrow.png) no-repeat bottom center; 
+			    border: none; 
+			} 
+			#tabs .ui-tabs-nav .ui-state-default a { 
+			    color: #303030; 
+			} 
+			#tabs .ui-tabs-nav .ui-state-active a { 
+			    color: #FFFFFF; 
+			}
+			
+		</style>
+    </head>
+	<body background="images/web_background.jpg">
+	  <table width="80%" border="0" align="center">
+		  <tr>
+		    <td height="80" colspan="2">
+		      <!--Import head.jsp-->
+		      <jsp:include flush="true" page="head.jsp"></jsp:include>
+		    </td>
+		  </tr>
+		  <tr>
+		  <td>
+		  <div id="tabs">
+			  <ul>
+			    <li><a href="#tabs-1"><img src="images/singers_tab.png"/></a></li>
+			    <li><a href="#tabs-2"><img src="images/songs_tab.png"></a></li>
+			  </ul>
+			  <div class="tabs-background"></div>
+			  <div id="tabs-1">
+				  <table>
+					<tr>
+						<td rowspan="2" width="80%" height="500" valign="top"><span1><jsp:include flush="true" page="left_singers.jsp"></jsp:include></span1></td>
+						<td width="20%" height="30" valign="top">
+						  	<form action="info_singer">
+						  		<input type = "text" name = "singerName" onkeyup="showAjax()" id="showAjaxText" style="height:25px;background:scroll 0 0 #FFFFFF;"/>
+						  		<input type = "submit" value = "search"/>	
+						  		<br/>
+      							<div id="showAjaxId" style="width:300px;height:220px;display:none; overflow-y:auto;overflow-x:hidden;"> </div>
+						  	</form>
+						</td>
+					</tr>
+					<tr>
+						<td width="20%" height="470" valign="bottom"><jsp:include flush="true" page="right_singers.jsp"></jsp:include></td>
+					</tr>
+				  </table>
+			  </div>
+			  <div id="tabs-2">
+			  	<table>
+					<tr>
+						<td rowspan="2" width="80%" height="500" valign="top"><span2><jsp:include flush="true" page="left_songs.jsp"></jsp:include></span2></td>
+						<td width="20%" height="30" valign="top">
+						  	<form action="info_song">
+						  		<input type = "text" name = "songName" />
+						  		<input type = "submit" value = "search"/>	
+						  	</form>
+						</td>
+					</tr>
+					<tr>
+						<td width="20%" height="470" valign="bottom"><jsp:include flush="true" page="right_songs.jsp"></jsp:include></td>
+					</tr>
+				  </table>
+			  </div>
+			</div>
+		  </td>
+		  </tr>
+		  <tr>
+		    <td height="60" colspan="2">
+			  <!--Import head.jsp-->
+			  <jsp:include flush="true" page="tail.jsp"></jsp:include>
+		    </td>
+		  </tr>
+		</table>
+    </body>
+
+    <script type="text/javascript">
+	function showAjax() {
+		var content = document.getElementById("showAjaxText").value;
+		doAjax("showAjaxId", "ajax_search?content=" + content);
+		document.getElementById("showAjaxId").style.display = "block";
+	}
+	function showClickText(obj) {
+		document.getElementById("showAjaxText").value = obj.innerHTML;
+		document.getElementById("showAjaxId").style.display = "none";
+	}
+  </script>
+</html>
+
+

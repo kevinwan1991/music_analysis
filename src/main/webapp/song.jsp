@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%><!-- "ISO-8859-1"%> -->
 <%@ page import="org.music.analysis.module.*"%>
 <%
 	Song song = new Song();
@@ -304,7 +304,7 @@ function loadSimilarGenres(genreName) {
             list.empty();
             if (genres.length > 0) {
                 _.each(genres, function(genre, i) {
-                    var a = $("<a>").text(genre.name).attr('href', '?genre='+genre.name);
+                    var a = $("<a>").text(genre.name).attr('href', 'https://en.wikipedia.org/wiki/'+ genre.name);
                     var li = $("<li>").append(a).addClass('gna');
                     list.append(li);
                 });

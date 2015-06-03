@@ -5,7 +5,18 @@ public class Singer {
 	private String[] albums = null;
 	private int popularity = 0;
 	private String country = "";
+	private String ID = "";
 	
+
+	public String getID() {
+		return ID;
+	}
+
+
+	public void setID(String iD) {
+		ID = iD;
+	}
+
 
 	public Singer(){
 		this.sName = "";

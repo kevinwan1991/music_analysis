@@ -7,12 +7,7 @@
         </session-timeout>
     </session-config>
     
-    <jsp-config>
-    	<jsp-property-group>
-        	<url-pattern>*.jsp</url-pattern>
-        	<page-encoding>UTF-8</page-encoding>
-    	</jsp-property-group>
-	</jsp-config>
+    
 
     <servlet>
         <servlet-name>central</servlet-name>
@@ -34,14 +29,28 @@
     	</description>
     	<display-name>info_singers</display-name>
     	<servlet-name>info_singers</servlet-name>
-    	<servlet-class>org.music.analysis.module.info_singers</servlet-class>
+    	<servlet-class>org.music.analysis.controller.info_singers</servlet-class>
     </servlet>
     <servlet>
     	<description>
     	</description>
     	<display-name>info_songs</display-name>
     	<servlet-name>info_songs</servlet-name>
-    	<servlet-class>org.music.analysis.module.info_songs</servlet-class>
+    	<servlet-class>org.music.analysis.controller.info_songs</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>info_singer</display-name>
+    	<servlet-name>info_singer</servlet-name>
+    	<servlet-class>org.music.analysis.module.info_singer</servlet-class>
+    </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>info_song</display-name>
+    	<servlet-name>info_song</servlet-name>
+    	<servlet-class>org.music.analysis.module.info_song</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -66,6 +75,14 @@
     <servlet-mapping>
     	<servlet-name>info_songs</servlet-name>
     	<url-pattern>/info_songs</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>info_singer</servlet-name>
+    	<url-pattern>/info_singer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>info_song</servlet-name>
+    	<url-pattern>/info_song</url-pattern>
     </servlet-mapping>
 
     </web-app>

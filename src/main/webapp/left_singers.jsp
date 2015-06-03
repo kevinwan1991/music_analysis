@@ -36,8 +36,6 @@
               {word:"WANG Will",weight:30},{word:"KANG Travis",weight:30},{word:"LI Brisk",weight:20},{word:"LI Siyuan",weight:20},
               {word:"WAN Kevin",weight:40}]; 
      
-     
-
   d3.layout.cloud().size([800, 500])
       .words(data.map(function(d) {
         return {text: d.word, size: d.weight};

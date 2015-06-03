@@ -1,5 +1,6 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@ page import="org.music.analysis.module.*"%>
+<%@page contentType="text/html"  pageEncoding ="UTF-8" %> 
+<%-- <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%> --%>
+<%@ page import="org.music.analysis.module.*" import="java.util.*" %>
 <%
 	Songs songs = new Songs();
 	songs = (Songs) request.getAttribute("songs");
@@ -17,11 +18,13 @@
 		background-color:#fff;
 	}
 	.hot_list{
-		width: 200px;
+		width: 220px;
 		background-color:#484545;
 		padding:10px;
 	}
 </style>
+<link type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"/>
+
 </head>
 <body>
 <div class="hot_list">

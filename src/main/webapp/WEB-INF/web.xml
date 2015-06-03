@@ -43,14 +43,14 @@
     	</description>
     	<display-name>info_singer</display-name>
     	<servlet-name>info_singer</servlet-name>
-    	<servlet-class>org.music.analysis.module.info_singer</servlet-class>
+    	<servlet-class>org.music.analysis.controller.info_singer</servlet-class>
     </servlet>
     <servlet>
     	<description>
     	</description>
     	<display-name>info_song</display-name>
     	<servlet-name>info_song</servlet-name>
-    	<servlet-class>org.music.analysis.module.info_song</servlet-class>
+    	<servlet-class>org.music.analysis.controller.info_song</servlet-class>
     </servlet>
 
     <servlet-mapping>

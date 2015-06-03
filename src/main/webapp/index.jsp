@@ -11,6 +11,7 @@
 		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<link href="css/default.css" rel="stylesheet" type="text/css" />
+		<link type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"/>
 		<script>
 			$(function() {
 			  $( "#tabs" ).tabs();
@@ -45,8 +46,10 @@
 			}
 			
 		</style>
+		<link type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"/>
+		
     </head>
-	<body background="images/web_background.jpg">
+	<body> <!-- background="images/web_background.jpg" -->
 	  <table width="80%" border="0" align="center">
 		  <tr>
 		    <td height="80" colspan="2">

@@ -9,6 +9,7 @@ public class Song {
 	private int views = 0;
 	private String language = "";
 	private String url = "";
+	private String youtubeName="";
 //	
 //	public Song(){
 //		this.id = "";
@@ -21,6 +22,14 @@ public class Song {
 //	}
 
 	
+	public String getYoutubeName() {
+		return youtubeName;
+	}
+
+	public void setYoutubeName(String youtubeName) {
+		this.youtubeName = youtubeName;
+	}
+
 	public String getId() {
 		return id;
 	}

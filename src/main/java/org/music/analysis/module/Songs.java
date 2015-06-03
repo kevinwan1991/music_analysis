@@ -2,6 +2,7 @@ package org.music.analysis.module;
 
 import java.util.ArrayList;
 
+
 public class Songs {
 	private ArrayList<Song> songs = new ArrayList<Song>();
 	
